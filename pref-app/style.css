@@ -1,0 +1,51 @@
+/* 全体のフォントと余白 */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  padding: 30px;
+  text-align: center;
+  color: #333;
+}
+
+/* 見出し */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+/* 入力欄 */
+input#keyword {
+  width: 250px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* 入力欄フォーカス時 */
+input#keyword:focus {
+  border-color: #2980b9;
+}
+
+/* 検索ボタン */
+button#searchBtn {
+  padding: 9px 18px;
+  margin-left: 10px;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ボタンホバー時 */
+button#searchBtn:hover {
+  background-color: #2980b9;
+}
+
+
