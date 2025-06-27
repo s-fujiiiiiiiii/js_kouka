@@ -1,3 +1,4 @@
+// ボタンがクリックされたら検索開始
 document.getElementById("searchBtn").addEventListener("click", function () {
   const keyword = document.getElementById("keyword").value.trim();
   const result = document.getElementById("result");
@@ -7,14 +8,14 @@ document.getElementById("searchBtn").addEventListener("click", function () {
     return;
   }
 
+  // JSONファイルを読み込む
   fetch("prefectures.json")
     .then(function (res) {
-      if (!res.ok) {
-        throw new Error("JSONの読み込みに失敗しました");
-      }
+      if (!res.ok) throw new Error("読み込み失敗");
       return res.json();
     })
     .then(function (data) {
+      // キーワードを含む都道府県を探す
       const found = data.find(function (pref) {
         return pref.name.includes(keyword);
       });
@@ -29,8 +30,7 @@ document.getElementById("searchBtn").addEventListener("click", function () {
         result.textContent = "見つかりませんでした。";
       }
     })
-    .catch(function (err) {
-      console.error("読み込みエラー:", err);
-      result.textContent = "読み込み中にエラーが起きました。";
+    .catch(function () {
+      result.textContent = "エラーが発生しました。";
     });
 });
